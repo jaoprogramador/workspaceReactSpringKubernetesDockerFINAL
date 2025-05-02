@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 26bookmarker-api
+  labels:
+    app: 26bookmarker-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: 26bookmarker-api
+  template:
+    metadata:
+      labels:
+        app: 26bookmarker-api
+    spec:
+      containers:
+      - image: jaoprogramador/26bookmarker-api
+        name: 26bookmarker-api

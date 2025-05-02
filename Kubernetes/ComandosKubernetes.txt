@@ -1,0 +1,41 @@
+KUBERTNETES
+==========
+kubectl get pods
+kubectl get all
+
+kubectl run bookmarker-api --image=jaoprogramador/26bookmarker-api --port=8080
+kubectl logs 26bookmarker-api -f
+kubectl describe pods 26bookmarker-api
+kubectl delete pods 26bookmarker-api
+
+
+kubectl apply -f pod.yaml
+
+kubectl delete -f pod.yaml
+kubectl create deployment 26bookmarker-api --image=jaoprogramador/26bookmarker-api
+
+kubectl delete deployment.apps/26bookmarker-api
+
+kubectl create deployment 26bookmarker-api --image=jaoprogramador/26bookmarker-api --dry-run=client -o yaml > deployment.yaml
+kubectl apply -f deployment.yaml
+kubectl delete -f deployment.yaml
+
+kubectl scale deployment 26bookmarker-api --replicas=3
+kubectl rollout history deployments 26bookmarker-api
+
+crear todos los pods de en ficheros de un directorioi
+kubectl apply -f .
+
+
+
+CONFIG-MAPS SECRETS
+==================
+kubectl create configmap db-config --from-literal=db_host=postgres --from-literal=db_name=appdb
+kubectl delete cm db-config
+
+kubectl create configmap db-config --from-literal=db_host=postgres --from-literal=db_name=appdb --dry-run=client -o yaml > 1-config.yaml
+kubectl apply -f 1-config.yaml
+
+CREAR SECRETOS
+=================
+kubectl create secret generic bookmarker-secrets --from-literal=postgres_username=postgres --dry-run=client -o yaml

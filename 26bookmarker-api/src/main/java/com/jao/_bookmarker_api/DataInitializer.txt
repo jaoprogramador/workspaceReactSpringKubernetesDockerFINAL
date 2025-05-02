@@ -1,0 +1,51 @@
+package com.jao._bookmarker_api;
+
+import java.time.Instant;
+import java.util.List;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import com.jao._bookmarker_api.domain.Bookmark;
+import com.jao._bookmarker_api.domain.BookmarkRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Component
+@RequiredArgsConstructor
+
+public class DataInitializer  implements CommandLineRunner{
+	
+	private final BookmarkRepository repository;
+	
+	@Override
+	public void run(String... args) throws Exception {
+		List<Bookmark> bookmarks = List.of(
+	            new Bookmark(null, "Spring Blog", "https://spring.io/blog", Instant.now()),
+	            new Bookmark(null, "Baeldung", "https://www.baeldung.com/", Instant.now()),
+	            new Bookmark(null, "Quarkus", "https://quarkus.io/", Instant.now()),
+	            new Bookmark(null, "Micronaut", "https://micronaut.io/", Instant.now()),
+	            new Bookmark(null, "JOOQ", "https://www.jooq.org/", Instant.now()),
+	            new Bookmark(null, "Thorben Janssen", "https://thorben-janssen.com/", Instant.now()),
+	            new Bookmark(null, "DZone", "https://dzone.com/", Instant.now()),
+	            new Bookmark(null, "DevOpsBookmarks", "https://www.devopsbookmarks.com/", Instant.now()),
+	            new Bookmark(null, "Kubernetes Docs", "https://kubernetes.io/docs/home/", Instant.now()),
+	            new Bookmark(null, "Apache Kafka", "https://kafka.apache.org/", Instant.now()),
+	            new Bookmark(null, "Java Magazine", "https://blogs.oracle.com/javamagazine/", Instant.now()),
+	            new Bookmark(null, "InfoQ", "https://www.infoq.com/", Instant.now()),
+	            new Bookmark(null, "JetBrains Blog", "https://blog.jetbrains.com/", Instant.now()),
+	            new Bookmark(null, "Mkyong", "https://mkyong.com/", Instant.now()),
+	            new Bookmark(null, "Vlad Mihalcea", "https://vladmihalcea.com/", Instant.now()),
+	            new Bookmark(null, "Thoughts on Java", "https://thorben-janssen.com/", Instant.now()),
+	            new Bookmark(null, "Oracle Java", "https://www.oracle.com/java/", Instant.now()),
+	            new Bookmark(null, "Stack Overflow", "https://stackoverflow.com/", Instant.now()),
+	            new Bookmark(null, "GitHub", "https://github.com/", Instant.now()),
+	            new Bookmark(null, "Medium Java", "https://medium.com/tag/java", Instant.now())
+	        );
+
+	        repository.saveAll(bookmarks);
+
+		
+	}
+
+}

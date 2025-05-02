@@ -1,0 +1,41 @@
+/* eslint-disable react/jsx-key */
+import React from 'react';
+//import 'bootstrap/dist/css/bootstrap.min.css';
+import type { GetServerSideProps, NextPage } from 'next';
+import NavBar from '../../components/NavBar';
+
+
+import { fetchBookmarks } from '../../service/api'
+import { BookmarksResponse } from '../../service/model';
+
+interface HomeProps {
+  bookmarks: BookmarksResponse;
+}
+
+const Home: NextPage<HomeProps> = (props) => {
+  return (
+    <div>
+      <NavBar />
+
+      <main className="container mt-4">
+        <h1>Welcome Bookmarks</h1>
+        { props.bookmarks.data.map((bookmark, index) => <h2 key={index}>{bookmark.title}</h2>) }
+        <button className="btn btn-primary">Test Bootstrap</button>
+      </main>
+    </div>
+  );
+};
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const {page = 1, query = "" } = context.query
+    const bookmarks = await fetchBookmarks(parseInt(String(page)), String(query))
+
+//export const getServerSideProps: GetServerSideProps = async (context:...)=>{
+  return {
+    props: {
+      bookmarks
+    },
+  }
+}
+export default Home;
+

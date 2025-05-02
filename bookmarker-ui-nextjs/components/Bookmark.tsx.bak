@@ -1,0 +1,23 @@
+
+import React from "react";
+import type {Bookmark} from '../service/model';
+import Link from "next/link";
+
+interface BookmarkProps {
+    bookmark: Bookmark
+}
+const BookmarkCard: React.FC<BookmarkProps> = ({bookmark}) => (
+    <div>
+        <div className="alert alert-primary" role="alert">
+            <h5>
+                <Link target={"_blank"}  href={bookmark.url} className={'text-decoration-none'} >                 
+                        {bookmark.title}
+                </Link>
+                
+            </h5>
+        </div>
+        
+    </div>
+)
+
+export default BookmarkCard;
