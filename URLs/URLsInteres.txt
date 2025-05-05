@@ -1,0 +1,28 @@
+URLs de INTERÉS
+===========
+	Installation: 
+	==============
+		SDKMAN: https://sdkman.io/ 
+		NodeJS: https://nodejs.org/ 
+		Docker and DockerCompose: https://docs.docker.com/engine/install/ 
+		Kubectl https://kubernetes.io/docs/tasks/tools/ 
+		Kind https://kind.sigs.k8s.io/docs/user/qu... 
+		Lens https://k8slens.dev/ 
+		Spring Initializer https://start.spring.io/#!type=maven-...
+
+Recursos de Hibernate y Spring con CURSOS Y TUTORIALES
+========================================
+	https://vladmihalcea.com/
+	https://thorben-janssen.com/blog/
+
+	Enlaces tema React, next, bootstrap
+========================FRONT
+	https://react.dev/
+	https://nextjs.org/docs/app/api-reference/components/link
+	https://getbootstrap.com/docs/5.3/components/navbar/
+
+Video tutoriales de Kubernetes, spring boot, microservicios, FRONTS
+====================================================================
+	https://www.sivalabs.in/tutorials/
+	https://www.youtube.com/traversymedia
+	https://www.youtube.com/@Codevolution
